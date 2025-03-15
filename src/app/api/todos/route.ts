@@ -1,5 +1,6 @@
 import prisma from '@/lib/schema'
-import { NextResponse, NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
+import { boolean, object, string } from 'yup';
 
 export async function GET(request: Request) {
 
@@ -24,4 +25,26 @@ export async function GET(request: Request) {
 
     return NextResponse.json({ message: 'TODO', todos })
 
+}
+
+
+
+
+const postSchema = object({
+    descripcion: string().required(),
+    complete: boolean().optional().default(false)
+})
+
+export async function POST(request: Request) {
+
+    try {
+        const body = await postSchema.validate(await request.json())
+
+        const todo = await prisma.todo.create({ data: body })
+
+        return NextResponse.json({ message: 'Creando todo', todo })
+
+    } catch (error) {
+        console.log(error)
+    }
 }
