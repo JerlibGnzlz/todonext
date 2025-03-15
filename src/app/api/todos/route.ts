@@ -45,6 +45,6 @@ export async function POST(request: Request) {
         return NextResponse.json({ message: 'Creando todo', todo })
 
     } catch (error) {
-        console.log(error)
+        NextResponse.json(error, { status: 400 })
     }
 }
