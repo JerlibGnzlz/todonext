@@ -38,9 +38,9 @@ const postSchema = object({
 export async function POST(request: Request) {
 
     try {
-        const body = await postSchema.validate(await request.json())
+        const { descripcion, complete } = await postSchema.validate(await request.json())
 
-        const todo = await prisma.todo.create({ data: body })
+        const todo = await prisma.todo.create({ data: { descripcion, complete } })
 
         return NextResponse.json({ message: 'Creando todo', todo })
 
