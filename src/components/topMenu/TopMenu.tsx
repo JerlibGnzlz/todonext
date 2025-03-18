@@ -1,6 +1,4 @@
-import { CiBellOn, CiChat1, CiMenuBurger, CiSearch } from 'react-icons/ci'
-
-
+import { CiBellOn, CiChat1, CiSearch } from 'react-icons/ci';
 
 export const TopMenu = () => {
     return (
@@ -8,13 +6,9 @@ export const TopMenu = () => {
 
             <h5 className="text-2xl text-gray-600 font-medium">Dashboard</h5>
 
-            <button className="w-12 h-16 -mr-2 border-r lg:hidden">
-                <CiMenuBurger size={30} />
-            </button>
-
             {/* Right-side Actions */}
             <div className="flex items-center space-x-4">
-                <div className="hidden md:block w-64">
+                <div className="">
                     <div className="relative flex items-center text-black-400 focus-within:text-cyan-400">
                         <span className="absolute left-4 h-6 flex items-center pr-3 border-r border-black-300">
                             <CiBellOn />
@@ -24,33 +18,29 @@ export const TopMenu = () => {
                     </div>
                 </div>
 
-
-
-                <button className="md:hidden flex items-center justify-center w-10 h-10 rounded-xl border 
-    bg-gray-500 text-white transition-all duration-200 
-    hover:bg-gradient-to-r hover:from-sky-600 hover:to-cyan-400 hover:text-white 
-    focus:bg-gradient-to-r focus:from-sky-600 focus:to-cyan-400 focus:text-white 
-    active:bg-sky-700 active:text-white">
+                <button className="flex items-center justify-center w-10 h-10 rounded-xl border 
+                    bg-gray-500 text-white transition-all duration-200 
+                    hover:bg-gradient-to-r hover:from-sky-600 hover:to-cyan-400 hover:text-white 
+                    focus:bg-gradient-to-r focus:from-sky-600 focus:to-cyan-400 focus:text-white 
+                    active:bg-sky-700 active:text-white">
                     <CiSearch />
                 </button>
 
                 <button className="flex items-center justify-center w-10 h-10 rounded-xl border  
-    bg-gray-500 text-white transition-all duration-200 
-    hover:bg-gradient-to-r hover:from-sky-600 hover:to-cyan-400 hover:text-white 
-    focus:bg-gradient-to-r focus:from-sky-600 focus:to-cyan-400 focus:text-white 
-    active:bg-sky-700 active:text-white">
+                    bg-gray-500 text-white transition-all duration-200 
+                    hover:bg-gradient-to-r hover:from-sky-600 hover:to-cyan-400 hover:text-white 
+                    focus:bg-gradient-to-r focus:from-sky-600 focus:to-cyan-400 focus:text-white 
+                    active:bg-sky-700 active:text-white">
                     <CiChat1 size={25} />
                 </button>
 
                 <button className="flex items-center justify-center w-10 h-10 rounded-xl border 
-    bg-gray-500 text-white transition-all duration-200 
-    hover:bg-gradient-to-r hover:from-sky-600 hover:to-cyan-400 hover:text-white 
-    focus:bg-gradient-to-r focus:from-sky-600 focus:to-cyan-400 focus:text-white 
-    active:bg-sky-700 active:text-white">
+                    bg-gray-500 text-white transition-all duration-200 
+                    hover:bg-gradient-to-r hover:from-sky-600 hover:to-cyan-400 hover:text-white 
+                    focus:bg-gradient-to-r focus:from-sky-600 focus:to-cyan-400 focus:text-white 
+                    active:bg-sky-700 active:text-white">
                     <CiBellOn size={25} />
                 </button>
-
-
             </div>
         </div>
     )
