@@ -1,18 +1,19 @@
 import prisma from "@/lib/schema";
+import { TodosGrid } from "@/todos/components/TodosGrid";
 
 export const metadata = {
-    title: 'List of todos',
+    title: 'Lista de todos',
 }
-export default function RestTodosPage() {
+export default async function RestTodosPage() {
 
-    const todos = prisma.todo.findMany({
+    const todos = await prisma.todo.findMany({
         orderBy: {
-            createdAt: "asc"
+            descripcion: "asc"
         }
     })
     return (
         <div>
-            {JSON.stringify(todos)}
+            <TodosGrid todos={todos} />
         </div>
     );
 }

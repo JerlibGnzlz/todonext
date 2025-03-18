@@ -13,7 +13,7 @@ const menuItems = [
     },
     {
         icon: <IoCheckboxOutline />,
-        title: "Rest todos",
+        title: "Rest TODO",
         path: "/dashboard/rest-todos"
     },
     {
