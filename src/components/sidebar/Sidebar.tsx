@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { CiBookmarkCheck, CiLogout } from 'react-icons/ci'
+import { CiLogout } from 'react-icons/ci'
 import { SidebarItem } from './SidebarItem'
 import { IoCalendarClear, IoCheckboxOutline, IoListOutline } from 'react-icons/io5'
 

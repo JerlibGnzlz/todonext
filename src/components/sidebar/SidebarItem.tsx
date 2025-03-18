@@ -11,7 +11,6 @@ interface SidebarItemProps {
     path: string
     title: string
 }
-//   {/* Active className: text-white bg-gradient-to-r from-sky-600 to-cyan-400 */}
 export const SidebarItem = ({ icon, path, title }: SidebarItemProps) => {
 
     const pathName = usePathname()
