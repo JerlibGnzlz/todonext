@@ -42,6 +42,7 @@ export async function POST(request: Request) {
 
         const todo = await prisma.todo.create({ data: { descripcion, complete } })
 
+
         return NextResponse.json({ message: 'Creando todo', todo })
 
     } catch (error) {
