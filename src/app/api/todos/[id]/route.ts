@@ -89,6 +89,7 @@
 import prisma from "@/lib/schema";
 import { NextResponse } from "next/server";
 
+
 export async function PUT(req: Request, { params }: { params: { id: string } }) {
     try {
         const { id } = params;
@@ -98,6 +99,7 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
             where: { id },
             data: { complete },
         });
+
 
         return NextResponse.json({ message: "Tarea actualizada", data: updatedTodo }, { status: 200 });
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
