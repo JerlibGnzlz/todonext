@@ -3,7 +3,7 @@
 import { Todo } from "@prisma/client"
 import { TodoItem } from './TodoItem';
 import { updateTodo } from "../helpers/route";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 interface TodosGridProps {
     todos?: Todo[]
@@ -11,7 +11,7 @@ interface TodosGridProps {
 
 export const TodosGrid = ({ todos = [] }: TodosGridProps) => {
 
-    const router = useRouter(); // Hook para manejar navegación y refrescar la UI
+    // const router = useRouter(); // Hook para manejar navegación y refrescar la UI
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -21,7 +21,7 @@ export const TodosGrid = ({ todos = [] }: TodosGridProps) => {
                     todo={todo}
                     toggleTodo={async (id, complete) => {
                         await updateTodo(id, complete); // Actualiza la tarea
-                        router.refresh(); // Refresca la UI
+                        // router.refresh(); // Refresca la UI
                     }} />
             ))}
         </div>
