@@ -33,16 +33,13 @@ export const crearTodo = async (descripcion: string): Promise<Todo> => {
     return data
 }
 
-
-export const eliminarTodo = async (id: string): Promise<Todo> => {
-
-    const todo = await fetch(`/api/todos/${id}`, {
+export const eliminarTodo = async (): Promise<boolean> => {
+    const res = await fetch('/api/todos', {
         method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    })
+        headers: { 'Content-Type': 'application/json' },
+    });
 
-    const data = await todo.json()
-    return data
-}
+    if (!res.ok) throw new Error("Error al eliminar las tareas");
+
+    return true;
+};

@@ -49,3 +49,19 @@ export async function POST(request: Request) {
         NextResponse.json(error, { status: 400 })
     }
 }
+
+
+export async function DELETE() {
+    try {
+
+
+        const deletedTodo = await prisma.todo.deleteMany({
+            where: { complete: true },
+        });
+
+        return NextResponse.json({ message: "Tareas eliminadas", data: deletedTodo }, { status: 200 });
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
+        return NextResponse.json({ message: "Error al eliminar las tareas" }, { status: 500 });
+    }
+}

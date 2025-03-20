@@ -49,18 +49,3 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
 
 
 
-export async function DELETE(_req: Request, { params }: { params: { id: string } }) {
-    try {
-        const { id } = params;
-
-
-        const updatedTodo = await prisma.todo.delete({
-            where: { id },
-        });
-
-        return NextResponse.json({ message: "Tarea eliminada", data: updatedTodo }, { status: 200 });
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (error) {
-        return NextResponse.json({ message: "Error al eliminar la tarea" }, { status: 500 });
-    }
-}
