@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
 import { crearTodo, eliminarTodo } from "../helpers/route";
+import { toast } from "sonner"
 
 
 export const NewTodo = () => {
@@ -14,10 +15,11 @@ export const NewTodo = () => {
     const onSubmit = (e: FormEvent) => {
         e.preventDefault()
         if (descripcion.trim().length === 0) return
-        console.log("formulario...", descripcion)
+        toast.error("La descripción no puede estar vacía");
         crearTodo(descripcion);
         router.refresh();
         setDescripcion("");
+
     }
     const deleteCompleted = async () => {
         try {
