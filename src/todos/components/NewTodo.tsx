@@ -11,20 +11,13 @@ export const NewTodo = () => {
     const router = useRouter();
 
 
-    const onSubmit = async (e: FormEvent) => {
+    const onSubmit = (e: FormEvent) => {
         e.preventDefault()
         if (descripcion.trim().length === 0) return
         console.log("formulario...", descripcion)
-        try {
-            await crearTodo(descripcion);
-
-            router.refresh();
-
-            setDescripcion("");
-
-        } catch (error) {
-            console.error("Error al crear tarea:", error);
-        }
+        crearTodo(descripcion);
+        router.refresh();
+        setDescripcion("");
     }
 
     return (
