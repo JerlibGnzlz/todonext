@@ -6,6 +6,7 @@ export default function Loading() {
             <div className="bg-white shadow-lg rounded-2xl p-6 w-80 flex flex-col items-center gap-4">
                 <Skeleton className="h-6 w-3/4 rounded-md" />
                 <Skeleton className="h-4 w-2/3 rounded-md" />
+                <h6 className="text-xl font-semibold text-black-700">Cargando...</h6>
                 <Skeleton className="h-4 w-full rounded-md" />
                 <Skeleton className="h-10 w-full rounded-lg" />
             </div>
