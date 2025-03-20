@@ -9,14 +9,17 @@ export async function GET(_request: Request) {
     const todo = await prisma.todo.createMany({
         data: [
             {
-                descripcion: 'Tarea 1',
+                descripcion: 'Descansar',
             },
             {
-                descripcion: 'Tarea 2',
+                descripcion: 'Comer',
                 complete: true
             },
             {
-                descripcion: 'Tarea 3',
+                descripcion: 'Estudiar',
+            },
+            {
+                descripcion: 'Jugar',
             }
         ]
     })
