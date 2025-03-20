@@ -28,24 +28,24 @@ export const Sidebar = () => {
     return (
         <aside className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
             <div>
-                <div className="-mx-6 px-6 py-4">
+                <div className="mx-auto flex items-center justify-center border-b  py-4">
                     <Link href="#" title="home">
                         <Image
-                            height={100}
-                            width={100}
-                            src="https://tailus.io/sources/blocks/stats-cards/preview/images/logo.svg" className="w-32" alt="tailus logo" />
+                            height={300}
+                            width={200}
+                            src="https://i.pinimg.com/236x/b1/3b/2f/b13b2f17232adde6a6182cd680bf46ea.jpg" className="w-32" alt="tailus logo" />
                     </Link>
                 </div>
 
                 <div className="mt-8 text-center">
                     <Image
-                        height={100}
-                        width={100}
-                        src="https://tailus.io/sources/blocks/stats-cards/preview/images/logo.svg"
+                        height={200}
+                        width={500}
+                        src="https://i.pinimg.com/236x/5a/11/0e/5a110e0b72a54423ee435b491597eb91.jpg"
                         alt="avatar"
                         className="w-10 h-10 m-auto rounded-full object-cover " />
-                    <h5 className=" mt-4 text-xl font-semibold text-gray-600 ">Cynthia J. Watts</h5>
-                    <span className=" text-gray-400 lg:block">Admin</span>
+                    <h5 className=" mt-4 text-xl font-semibold text-gray-600 ">Jerlib Gonzalez</h5>
+                    <span className=" text-gray-400 lg:block">Administrador</span>
                 </div>
 
                 <ul className="space-y-2 tracking-wide mt-8">

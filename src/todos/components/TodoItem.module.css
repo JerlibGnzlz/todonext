@@ -1,4 +1,5 @@
 .todoDone {
+    margin: 5px;
     text-decoration: line-through;
     background-color: #ebf8ff;
     /* bg-blue-50 */
@@ -25,6 +26,7 @@
 }
 
 .todoPending {
+    margin: 5px;
     background-color: #fef2f2;
     /* bg-red-50 */
     border-radius: 0.5rem;

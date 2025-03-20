@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "tailius.io",
+        hostname: "i.pinimg.com",
       },
     ],
   },
