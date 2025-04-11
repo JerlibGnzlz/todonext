@@ -3,7 +3,6 @@
 // import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
-// import { eliminarTodo } from "../helpers/route";
 import { toast } from "sonner"
 import { addTodo, deletedCompleted } from "../actions/todo-actions";
 
@@ -23,14 +22,6 @@ export const NewTodo = () => {
         // router.refresh();
 
     }
-    const deleteCompleted = async () => {
-        try {
-            await deletedCompleted();
-            // router.refresh(); // Esto recarga los datos desde el servidor
-        } catch (error) {
-            console.error("Error eliminando tareas", error);
-        }
-    };
 
 
     return (
@@ -50,7 +41,7 @@ export const NewTodo = () => {
             <span className='flex flex-1'></span>
 
             <button
-                onClick={() => deleteCompleted()}
+                onClick={() => deletedCompleted()}
                 type='button' className="flex items-center justify-center rounded ml-2 bg-red-400 p-2 text-white hover:bg-red-700 transition-all">
                 <IoTrashOutline />
                 Eliminar completados
