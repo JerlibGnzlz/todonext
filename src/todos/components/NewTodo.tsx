@@ -3,9 +3,9 @@
 // import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
-import { eliminarTodo } from "../helpers/route";
+// import { eliminarTodo } from "../helpers/route";
 import { toast } from "sonner"
-import { addTodo } from "../actions/todo-actions";
+import { addTodo, deletedCompleted } from "../actions/todo-actions";
 
 
 export const NewTodo = () => {
@@ -25,7 +25,7 @@ export const NewTodo = () => {
     }
     const deleteCompleted = async () => {
         try {
-            await eliminarTodo();
+            await deletedCompleted();
             // router.refresh(); // Esto recarga los datos desde el servidor
         } catch (error) {
             console.error("Error eliminando tareas", error);

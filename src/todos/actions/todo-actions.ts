@@ -45,3 +45,24 @@ export const addTodo = async (descripcion: string) => {
         }
     }
 }
+
+
+export const deletedCompleted = async () => {
+    try {
+
+
+        const todo = await prisma.todo.deleteMany({
+            where: { complete: true },
+        });
+
+        revalidatePath('/dashboard/server-todos')
+        return todo
+
+
+    } catch (error) {
+        return {
+            message: "Error al eliminar la tarea",
+            error
+        }
+    }
+}
