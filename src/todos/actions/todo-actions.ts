@@ -21,8 +21,27 @@ export const toggleTodo = async (id: string, complete: boolean): Promise<Todo> =
         data: { complete }
     })
 
-    revalidatePath('/todos')
+    revalidatePath('/dashboard/server-todos')
 
     return updatedTodo
 
+}
+
+
+
+export const addTodo = async (descripcion: string) => {
+    try {
+
+        const todo = await prisma.todo.create({ data: { descripcion } })
+        revalidatePath('/dashboard/server-todos')
+
+        return todo
+
+
+    } catch (error) {
+        return {
+            message: "Error al crear la tarea",
+            error
+        }
+    }
 }

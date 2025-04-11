@@ -1,30 +1,32 @@
 'use client';
 
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
-import { crearTodo, eliminarTodo } from "../helpers/route";
+import { eliminarTodo } from "../helpers/route";
 import { toast } from "sonner"
+import { addTodo } from "../actions/todo-actions";
 
 
 export const NewTodo = () => {
     const [descripcion, setDescripcion] = useState("")
-    const router = useRouter();
+    // const router = useRouter();
 
 
     const onSubmit = (e: FormEvent) => {
         e.preventDefault()
         if (descripcion.trim().length === 0) return
         toast.error("La descripción no puede estar vacía");
-        crearTodo(descripcion);
-        router.refresh();
+        // crearTodo(descripcion);
+        addTodo(descripcion);
         setDescripcion("");
+        // router.refresh();
 
     }
     const deleteCompleted = async () => {
         try {
             await eliminarTodo();
-            router.refresh(); // Esto recarga los datos desde el servidor
+            // router.refresh(); // Esto recarga los datos desde el servidor
         } catch (error) {
             console.error("Error eliminando tareas", error);
         }
