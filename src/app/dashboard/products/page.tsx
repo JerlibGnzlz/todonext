@@ -1,7 +1,20 @@
 import { ProductCard } from "@/products/components/ProductCard";
 import { products } from "@/products/data/products";
 
-export default function ProductsPage() {
+interface IProduct {
+    id: string;
+    name: string;
+    price: number;
+    rating: number;
+    image: string;
+}
+export default function ProductsPage({
+    id,
+    name,
+    price,
+    rating,
+    image
+}: IProduct) {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 
@@ -11,11 +24,11 @@ export default function ProductsPage() {
                 ))
             }
             <ProductCard
-                id="UUID-ABC-1"
-                name="Teslo Hoodie"
-                price={15}
-                rating={5}
-                image="/images/products/buzo.jpg"
+                id={id}
+                name={name}
+                price={price}
+                rating={rating}
+                image={image}
             />
         </div>
     );
